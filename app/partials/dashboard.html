@@ -1,0 +1,41 @@
+
+<div class="container mainDiv">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-7">
+            <h1  translate="app.head" class="app-heading"></h1>
+            <span class="manageLabel text-left" translate="app.sub.head"></span><br/>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-5 col-sm-offset-0 col-md-offset-6 text-center i18n">
+            <a href="" ng-click="dc.changeLanguage('en')"> <span translate="app.english"></span> </a>| <a href="" ng-click="dc.changeLanguage('es')"> <span translate="app.spanish">Spanish</span> </a>
+
+        </div>
+    </div>
+    <hr class="headerHrLine"/>
+    <div class="row select-parent-div">
+        <div class="col-lg-6 col-md-6 col-xs-6">
+            <div class="form-group">
+                <!--<label for="gender1" class="col-sm-2 control-label"></label>-->
+                <div class="col-md-6 col-sm-8  col-xs-12">
+                    <select ng-model="selectStatus" class="form-control">
+                        <option value="">-please select task-</option>
+                        <option ng-repeat="taskStatus in dc.getStatuses"
+                                value="{{taskStatus}}">{{taskStatus}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-xs-6 text-right addTaskdiv ">
+            <button type="button" class="btn btn-primary" ng-click="addNewTask()">
+                <i class="fa fa-plus"></i> <span ng-bind="'dashboard.add.task.btn' | translate"></span>
+            </button>
+        </div>
+    </div>
+    <hr/>
+    <all-tasks-directive></all-tasks-directive>
+
+    <hr class="headerHrLine">
+    <div class="row">
+        <div class="col-md-offset-8 col-sm-offset-6 cl-sm-6 col-sm-4 col-xs-12 text-right"><h2> Powered by SemanticBits</h2></div>
+
+    </div>
+</div>

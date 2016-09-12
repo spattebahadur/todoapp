@@ -1,0 +1,25 @@
+<div class="taskDetails">
+    <div class="row">
+        <div class="col-md-6  col-sm-6 col-xs-6 text-left"><h3 class="task-title">{{task.name}}</h3></div>
+        <div class="col-md-6 col-sm-6 col-xs-6 text-center">
+            <a href="#" ng-click="removeTaskDir(task)"> <i class="fa fa-trash fa-2x"></i></a>
+
+            <input type="checkbox" value="" data-toggle="tooltip" title="Mark as complete" class="task-status-checkbox">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 taskinfo">
+            <label ng-bind="'task.description.label' | translate"></label>:
+            <span>{{task.description}} </span><br>
+            <label ng-bind="'task.start.date.label' | translate"></label>:
+            <span>{{task['start-date']}} </span><br>
+            <label ng-bind="'task.end.date.label' | translate"></label>:
+            <span>{{task['end-date']}} </span><br>
+            <label ng-bind="'task.status.label' | translate"></label>:
+            <span>{{task.status}} </span><br>
+            <label ng-bind="'task.priority.label' | translate"></label>:
+            <span>{{task.priority}} </span><br>
+        </div>
+    </div>
+</div>

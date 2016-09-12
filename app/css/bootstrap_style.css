@@ -1,0 +1,135 @@
+.mainDiv{
+    border: 1px solid;
+    margin-top: 5px;
+}
+.app-heading{
+font-weight: bold;
+    font-size: 35px;
+
+}
+
+.i18n{
+    margin-top: 20px;
+}
+hr{
+    border: 1px solid !important;
+}
+.headerHrLine{
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+.manageLabel{
+    margin-left: 45px;
+    font-size: 20px;
+}
+.margin-top-ten-px{
+    margin-top: 25px;
+}
+.select-parent-div{
+    margin-right: -84px !important;
+}
+.status-caret{
+    margin-left: 60px !important;
+}
+.addTaskdiv{
+    /*text-align: left;*/
+    /*margin-left: 30px;*/
+}
+
+.task-title{
+    margin-top: 0px;
+    margin-left: 3px;
+}
+
+.task-status-checkbox{
+    /*width: 30px;*/
+    height: 25px;
+}
+.task-status-checkbox-checked{
+display: block;
+}
+
+.task-status-checkbox-unchecked{
+display: none !important;
+}
+
+.taskDetails{
+    margin-right: 35px;
+    margin-left: 10px;
+    border: 2px solid;
+    padding-top: 5px;
+    /* min-height: 200px;*/
+}
+.taskDetails hr{
+    margin-right: 156px;
+    margin-top: 6px;
+    border: 1px solid;
+
+}
+
+.taskinfo{
+    margin-left: 4px;
+}
+
+/*
+change predefine class property
+*/
+.col-sm-6{
+    margin-top: 8px;
+}
+.row{
+    clear: both;
+}
+
+/*
+media query for
+min 979 to 1000
+*/
+
+@media screen and (min-width: 979px)and (max-width: 1000px) {
+    .addTaskdiv{
+        margin-left: -97px;
+    }
+}
+
+/*
+media query for
+min 767 to 1000
+*/
+
+@media screen and (min-width: 766px)and (max-width: 978px) {
+    .addTaskdiv{
+        margin-left: -100px;
+    }
+}
+
+/*
+media query for
+min 355 to 598
+*/
+@media screen and (min-width: 355px)and (max-width: 598px) {
+    .addTaskdiv{
+        margin-left: -89px;
+    }
+    .manageLabel{
+        margin-left: 6px;
+    }
+    /*.select-task-status{
+        width: 110px !important;
+    }*/
+}
+/*
+media query for
+min 600 to 765
+*/
+.i18n{
+    width: 142px;
+}
+/*
+557 to 765
+*/
+@media screen and (min-width: 557px)and (max-width: 765px) {
+    .addTaskdiv{
+        margin-left: -90px;
+    }
+}

@@ -1,0 +1,18 @@
+
+{
+  "app.head":"TODOApp",
+  "app.sub.head":"Manage your tasks",
+  "app.english":"English",
+  "app.spanish":"spanish",
+  "dashboard.add.task.btn":"Add New Task",
+  "task.title.label":"TaskName",
+  "task.description.label":"Description",
+  "task.status.label":"Status",
+  "task.start.date.label":"Start-date",
+  "task.end.date.label":"End-date",
+  "task.priority.label":"Priority",
+  "modal.cancel.button":"Cancel",
+  "modal.delete.button":"Delete",
+  "modal.delete.message":"do you really want to delete task {{task.name}}?",
+  "modal.save.button":"save"
+}

@@ -1,0 +1,18 @@
+
+{
+  "app.head":"QuehacerApp",
+  "app.sub.head":"administrar su tarea",
+  "app.english":"Inglés",
+  "app.spanish":"spanish",
+  "dashboard.add.task.btn":"añadir nuevo botón",
+  "task.title.label":"título de la tarea",
+  "task.description.label":"descripción",
+  "task.status.label":"estado",
+  "task.start.date.label":"fecha de inicio",
+  "task.end.date.label":"fecha final",
+  "task.priority.label":"prioridad",
+  "modal.cancel.button":"Cancelar",
+  "modal.delete.button":"Borrar",
+  "modal.delete.message":"es lo que de verdad quiere eliminar la tarea ?",
+  "modal.save.button":"salvar"
+}
