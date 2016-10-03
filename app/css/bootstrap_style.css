@@ -1,6 +1,7 @@
 .mainDiv{
-    border: 1px solid;
+    /*border: 1px solid;*/
     margin-top: 5px;
+    background-color: silver;
 }
 .app-heading{
 font-weight: bold;
@@ -56,9 +57,19 @@ display: none !important;
 .taskDetails{
     margin-right: 35px;
     margin-left: 10px;
-    border: 2px solid;
+    border-radius:3px;
     padding-top: 5px;
     /* min-height: 200px;*/
+}
+
+.mouse-over{
+    opacity: 0.5;
+}
+.form-horizontal .control-label{
+    text-align:left;
+}
+.add-task-modal-header{
+    background-color: grey;
 }
 .taskDetails hr{
     margin-right: 156px;
@@ -80,6 +91,33 @@ change predefine class property
 .row{
     clear: both;
 }
+
+.open-status{
+    background-color: #00b3ee;
+}
+
+.inprogress-status{
+    background-color: hotpink;
+}
+.completed-status{
+    background-color: #5e5e5e;
+}
+
+.rejected-status{
+    background-color: red;
+}
+
+.invalid-status{
+    background-color: #985f0d;
+}
+
+.tooltipStyle{
+    background-color: white;
+}
+/*
+.add-task-datepicker{
+    width: 330px;
+}*/
 
 /*
 media query for

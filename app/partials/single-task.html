@@ -1,10 +1,10 @@
-<div class="taskDetails">
+<div class="taskDetails" ng-class="{'open-status':task.status==='OPENED','inprogress-status':task.status==='INPROGRESS','completed-status':task.status==='COMPLETED','invalid-status':task.status==='INVALID','rejected-status':task.status==='REJECTED'}">
     <div class="row">
         <div class="col-md-6  col-sm-6 col-xs-6 text-left"><h3 class="task-title">{{task.name}}</h3></div>
         <div class="col-md-6 col-sm-6 col-xs-6 text-center">
             <a href="#" ng-click="removeTaskDir(task)"> <i class="fa fa-trash fa-2x"></i></a>
 
-            <input type="checkbox" value="" data-toggle="tooltip" title="Mark as complete" class="task-status-checkbox">
+          <input ng-show="task.status!=='COMPLETED'" type="checkbox"  ng-click="changeTaskStatusAsComplete(task)" data-toggle="tooltip" title="Mark as complete" class="task-status-checkbox">
         </div>
     </div>
     <hr>

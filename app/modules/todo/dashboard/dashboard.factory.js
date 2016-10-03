@@ -11,8 +11,8 @@
     function taskService($http,$filter,$q,$uibModal,$rootScope) {
         var service = {
             readTasks: readTasks,
-            /*    dummyAllTasksData:initRootDummy,*/
             deleteTask:deleteTask,
+            markTaskAsCompleted:markTaskAsCompleted
         };
         console.log()
         return service;
@@ -45,5 +45,14 @@
             return $rootScope.ALL_TASK;
         }
 
+        /*
+        * Mark task as completed
+        * */
+        
+        function markTaskAsCompleted(taskItem) {
+            console.log("service mark as completed");
+            taskItem.status="COMPLETED";
+            
+        }
     }
 }());

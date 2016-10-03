@@ -1,56 +1,78 @@
-
 <div id="" class=" ">
     <div class="">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header add-task-modal-header">
+                <h2>Add New Task</h2>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal">
+                <form name="addTaskForm" class="form-horizontal" novalidate>
                     <div class="form-group">
-                        <label ng-bind="'task.title.label' | translate" class="control-label col-xs-2"></label>
-                        <div class="col-xs-10">
-                            <input type="text" class="form-control" id="task-title" ng-model="task.name" placeholder="Enter Task Title">
+                        <label ng-bind="'task.title.label' | translate" class="control-label col-xs-4 col-sm-4 col-md-4 col-lg-4"></label>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <input type="text" class="form-control" name="taskTitle" ng-model="task.name" placeholder="Enter Task Title" ng-blur="verifyDuplicateTaskByName(task)" disabled>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label ng-bind="'task.description.label' | translate" class="control-label col-xs-2"></label>
-                        <div class="col-xs-10">
-                            <input type="text" class="form-control" id="task-desc" ng-model="task.description"  placeholder="Enter task description">
+                        <label ng-bind="'task.description.label' | translate" class="control-label col-xs-4 col-sm-4 col-md-4 col-lg-4"></label>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <input type="text" class="form-control" name="taskDesc" ng-model="task.description"  placeholder="Enter task description" required>
+                            <div ng-show="addTaskForm.$submitted || addTaskForm.taskDesc.$touched">
+                                <span ng-show="addTaskForm.taskDesc.$error.required" class="text-danger">plz enter description!!! </span>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label ng-bind="'task.start.date.label' | translate" class="control-label col-xs-2"></label>
-                        <div class="col-xs-10">
-                            <input type="text" class="form-control" id="task-start-date" ng-model="task['start-date']"  placeholder="Enter task start date">
+                        <label ng-bind="'task.start.date.label' | translate" class="control-label col-xs-4 col-sm-4 col-md-4 col-lg-4"></label>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <datepicker class="add-task-datepicker" date-format="dd-MM-yyyy" date-min-limit="{{minDate}}">
+                                <input class="form-control" ng-model="task['start-date']" name="taskStartDate" type="text" placeholder="Enter task start date" required>
+                            </datepicker>
+                            <div ng-show="addTaskForm.$submitted || addTaskForm.taskStartDate.$touched">
+                                <span ng-show="addTaskForm.taskStartDate.$error.required" class="text-danger">plz select start date!!! </span>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label ng-bind="'task.end.date.label' | translate" class="control-label col-xs-2"></label>
-                        <div class="col-xs-10">
-                            <input type="text" class="form-control" id="task-end-date" ng-model="task['end-date']"  placeholder="Enter task end date">
+                        <label ng-bind="'task.end.date.label' | translate" class="control-label col-xs-4 col-sm-4 col-md-4 col-lg-4"></label>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <datepicker date-format="dd-MM-yyyy" date-min-limit="{{minDate}}">
+                                <input type="text" class="form-control" id="task-end-date" name="taskEndDate" ng-model="task['end-date']"  placeholder="Enter task end date" required/>
+                            </datepicker>
+                            <div ng-show="addTaskForm.$submitted || addTaskForm.taskEndDate.$touched">
+                                <span ng-show="addTaskForm.taskEndDate.$error.required" class="text-danger">pls select end date!!! </span>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label ng-bind="'task.status.label' | translate" class="control-label col-xs-2"></label>
-                        <div class="col-xs-10">
-                            <select ng-model="task.status" class="form-control">
+                        <label ng-bind="'task.status.label' | translate" class="control-label  col-xs-4 col-sm-4 col-md-4 col-lg-4"></label>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <select ng-model="task.status" class="form-control" name="taskStatus" required>
                                 <option value="">-please select task-</option>
                                 <option ng-repeat="taskStatus in getStatusesInAddModal"
                                         value="{{taskStatus}}">{{taskStatus}}</option>
                             </select>
+                            <div ng-show="addTaskForm.$submitted || addTaskForm.taskStatus.$touched">
+                                <span ng-show="addTaskForm.taskStatus.$error.required" class="text-danger">plz select status!!! </span>
+                            </div>
+
                         </div>
                     </div>
                     <div class="form-group">
-                        <label ng-bind="'task.priority.label' | translate" class="control-label col-xs-2"></label>
-                        <div class="col-xs-10">
-                            <input type="text" class="form-control" id="task-priority" ng-model="task.priority" placeholder="Enter Task priority">
+                        <label ng-bind="'task.priority.label' | translate" class="control-label col-xs-4 col-sm-4 col-md-4 col-lg-4"></label>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <input type="text" class="form-control" id="task-priority" ng-model="task.priority" name="taskPriority" placeholder="Enter Task priority" required>
+
+                            <div ng-show="addTaskForm.$submitted || addTaskForm.taskPriority.$touched">
+                                <span ng-show="addTaskForm.taskPriority.$error.required" class="text-danger">plz select priority!!! </span>
+                            </div>
                         </div>
                     </div>
                 </form>
+                <span ng-show="isMadatoryFieldSelected" class="text-danger"><i class="fa fa-exclamation-triangle"></i> pls select medatory fields</span>
             </div>
-            <div class="modal-footer">
-                <button type="button" ng-click="closeModal()" class="btn btn-default"><span ng-bind="'modal.cancel.button' | translate"></span></button>
-                <button type="button" ng-model="task" ng-click="saveTask(task)" class="btn btn-success"><span  ng-bind="'modal.save.button' | translate"></span></button>
+            <div class="modal-footer add-task-modal-header">
+                <button type="button" ng-model="task" ng-click="saveTask(task,addTaskForm.$valid)" class="btn btn-success btn-md"><span  ng-bind="'modal.save.button' | translate"></span></button>
+                <button type="button" ng-click="closeModal()" class="btn btn-default btn-md"><span ng-bind="'modal.cancel.button' | translate"></span></button>
             </div>
         </div>
     </div>

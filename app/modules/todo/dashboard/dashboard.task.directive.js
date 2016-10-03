@@ -6,7 +6,7 @@
     angular.module('dashboard.single.task.directive',[])
         .directive('singleTaskDirective',function () {
             return{
-                restrict:'E',
+                restrict:'AE',
                 scope:{
                     task:'=taskObj'
                 },
@@ -25,7 +25,22 @@
                                 }
                             }
                         });
+                    };
+                    $scope.changeTaskStatusAsComplete = function(taskItem){
+                        console.log("change task status");
+                        taskService.markTaskAsCompleted(taskItem);
                     }
+                },
+                link: function(scope, element, attrs) {
+                    element.on('mouseenter', function() {
+                       // scope.hoverEdit == !scope.hoverEdit
+                        element.addClass("mouse-over");
+                    });
+
+                    element.on('mouseleave', function() {
+                        //scope.hoverEdit == !scope.hoverEdit
+                        element.removeClass("mouse-over");
+                    });
                 }
             };
         })

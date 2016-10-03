@@ -1,0 +1,44 @@
+<h1>charts page by status</h1>
+<div class="col-lg-4 col-md-4 col-sm-4">
+    <canvas id="pie-chart-by-status" class="chart chart-pie" chart-data="data" chart-labels="labels">
+    </canvas>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4">
+    <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
+    </canvas>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4">
+    <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="seriesFortaskByStatus">
+    </canvas>
+</div><br/>
+
+<div class="col-lg-4 col-md-4 col-sm-4">
+    <h3>Open tasks with Priority</h3>
+    <canvas id="bar1" class="chart chart-bar" chart-data="statusOpenWithPriorityData" chart-labels="statusOpenWithPriorityLabel">
+    </canvas>
+</div>
+
+<div class="col-lg-4 col-md-4 col-sm-4">
+    <h3>Completed tasks with Priority</h3>
+    <canvas id="bar2" class="chart chart-pie" chart-data="statusCompletedWithPriorityData" chart-labels="statusOpenWithPriorityLabel">
+    </canvas>
+</div>
+
+<div class="col-lg-4 col-md-4 col-sm-4">
+    <h3>Invalid tasks with Priority</h3>
+    <canvas id="bar3" class="chart chart-pie" chart-data="statusInvalidWithPriorityData" chart-labels="statusOpenWithPriorityLabel">
+    </canvas>
+</div>
+
+<div class="col-lg-4 col-md-4 col-sm-4">
+    <h3>Inprogress tasks with Priority</h3>
+    <canvas id="bar4" class="chart chart-pie" chart-data="statusInprogressWithPriorityData" chart-labels="statusOpenWithPriorityLabel">
+    </canvas>
+</div>
+<div class="col-lg-8 col-md-8 col-sm-8">
+    <h3> overall look up  tasks with Priority</h3>
+    <canvas id="bar5" class="chart chart-bar" chart-data="statusWithPriorityLineData" chart-labels="statusWithPriorityLineLabel" chart-series="statusWithPriorityLineSeries"
+            chart-options="optionForstatusWithPriorityLine['options']" chart-colors="colorForstatusWithPriorityLine">
+    </canvas>
+</div>
+

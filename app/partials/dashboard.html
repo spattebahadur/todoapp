@@ -1,4 +1,3 @@
-
 <div class="container mainDiv">
     <div class="row">
         <div class="col-md-4 col-sm-6 col-xs-7">
@@ -12,18 +11,29 @@
     </div>
     <hr class="headerHrLine"/>
     <div class="row select-parent-div">
-        <div class="col-lg-6 col-md-6 col-xs-6">
-            <div class="form-group">
-                <!--<label for="gender1" class="col-sm-2 control-label"></label>-->
-                <div class="col-md-6 col-sm-8  col-xs-12">
-                    <select ng-model="selectStatus" class="form-control">
-                        <option value="">-please select task-</option>
-                        <option ng-repeat="taskStatus in dc.getStatuses"
-                                value="{{taskStatus}}">{{taskStatus}}</option>
-                    </select>
-                </div>
+        <div class="col-lg-3 col-md-3 col-xs-3">
+            <div class="col-md-10 col-sm-8  col-xs-12">
+                <ui-select  ng-model="dc.selectStatus" theme="bootstrap">
+                    <ui-select-match>{{$select.selected}}</ui-select-match>
+                    <ui-select-choices repeat="taskStatus in dc.getStatuses  track by $index">
+                        {{taskStatus}}
+                    </ui-select-choices>
+                </ui-select>
             </div>
         </div>
+        <div class="col-lg-3 col-md-3 col-xs-3">
+            <div class="col-md-12 col-sm-8  col-xs-12">
+                <ui-select multiple ng-model="dc.selectPriority">
+                    <ui-select-match>{{$item}}</ui-select-match>
+                    <ui-select-choices repeat="taskPriority in dc.getPriorities | filter:$select.search">{{taskPriority}}</ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-xs-3 text-right addTaskdiv ">
+            <a href="/chart"> show tasks on charts</a>
+        </div>
+
         <div class="col-lg-5 col-md-5 col-xs-6 text-right addTaskdiv ">
             <button type="button" class="btn btn-primary" ng-click="addNewTask()">
                 <i class="fa fa-plus"></i> <span ng-bind="'dashboard.add.task.btn' | translate"></span>

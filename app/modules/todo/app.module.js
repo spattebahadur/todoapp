@@ -7,10 +7,18 @@
     angular.module('myApps', [
         'ui.router',
         'ui.bootstrap',
+        '720kb.tooltips',
+        '720kb.datepicker',
+        'chart.js',
+        'ngSanitize',
+        'ui.select',
+        'dashboard.filter',
         'dashboard.controllers',
         'dashboard.taskService',
         'dashboard.tasks.directive',
         'dashboard.single.task.directive',
+        'chart.taskChartService',
+        'chart.controllers',
         'pascalprecht.translate'
     ]);
 }());

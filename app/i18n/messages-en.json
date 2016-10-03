@@ -1,11 +1,10 @@
-
 {
   "app.head":"TODOApp",
   "app.sub.head":"Manage your tasks",
   "app.english":"English",
   "app.spanish":"spanish",
   "dashboard.add.task.btn":"Add New Task",
-  "task.title.label":"TaskName",
+  "task.title.label":"Task Name",
   "task.description.label":"Description",
   "task.status.label":"Status",
   "task.start.date.label":"Start-date",
