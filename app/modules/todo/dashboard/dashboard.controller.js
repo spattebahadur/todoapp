@@ -5,9 +5,9 @@
 (function () {
     angular.module('dashboard.controllers',[])
         .controller('DashboardController',DashboardController);
-    DashboardController.$inject = ['$scope','taskService','$translate','$rootScope','$uibModal'];
+    DashboardController.$inject = ['$scope','taskService','$translate','$rootScope','$uibModal','$window','$location','$cookies'];
 
-    function DashboardController($scope,taskService,$translate,$rootScope,$uibModal) {
+    function DashboardController($scope,taskService,$translate,$rootScope,$uibModal,$window,$location,$cookies) {
         console.log("In dashboard controller");
 
         var dc = this;
@@ -64,6 +64,9 @@
             return multiPriority;
         }
 
+        dc.isAdmin=$cookies.get('hasAdmin');
+        console.log("Admin");
+        console.log(dc.isAdmin)
         /*
          * add new task modal
          * */

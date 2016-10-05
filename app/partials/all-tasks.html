@@ -1,5 +1,5 @@
 <div class="row margin-top-ten-px task-rows-parent">
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="task in ALL_TASK | filter:(dc.selectStatus==='ALL'?'':dc.selectStatus) | dashboardFilter:{priority:dc.selectPriority}">
-        <single-task-directive task-obj="task"></single-task-directive>
+        <single-task-directive task-obj="task" has-admin="dc.isAdmin"></single-task-directive>
     </div>
 </div>

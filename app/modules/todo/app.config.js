@@ -24,7 +24,7 @@
 
 
         $stateProvider.state('dashboard', {
-            url: '/',
+            url: '/dashboard',
             templateUrl: '/app/partials/dashboard.html',
             controller: 'DashboardController',
             controllerAs: 'dc'
@@ -33,6 +33,15 @@
             templateUrl: '/app/partials/chart.html',
             controller: 'ChartController',
             controllerAs: 'cCtrl'
+        }).state('login', {
+            url:'/',
+            templateUrl: '/app/partials/login-view.html',
+            controller: 'LoginController',
+            controllerAs: 'loginCtrl'
+        }).state('logout', {
+            url:'/logout',
+            controller: 'LogoutController',
+            controllerAs: 'loginCtrl'
         }).state('notavailable', {
             url:'/notavailable',
             templateUrl: '/app/partials/page-not-found.html'
